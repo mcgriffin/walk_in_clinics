@@ -1,0 +1,302 @@
+/*****************************************************************************
+  walk_in_clinics
+******************************************************************************/
+
+
+
+@import '../../bower_components/bourbon/dist/_bourbon.scss';
+
+$visual-grid: true;
+$grid-columns: 15;
+
+
+
+@import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+/*breakpoints*/
+$tablet: new-breakpoint(min-width 450px);
+$desktop: new-breakpoint(min-width 3000px);
+
+$height0: new-breakpoint(min-height 300px);
+$height1: new-breakpoint(min-height 570px);
+$height2: new-breakpoint(min-height 800px);
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+
+/* Cross page styles */
+	body {
+		@include outer-container;
+		font-size: 16px;
+		font-family: Futura, arial, sans-serif;
+		overflow: auto;
+	}
+
+	header {
+		/*border: 2px solid brown;*/
+		padding-top: 4px;
+	}
+
+	footer {
+		border: 1px solid black;
+	}	
+
+	img {
+		width: 100%;
+	}
+
+
+	ul {
+		padding: 0px;
+	}
+
+
+	li {
+		list-style: none;
+	}
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+/* Top menu bar: home, checkin, stats, search */
+	#menu {
+		display: none;
+		}
+
+	@include media($desktop) {
+		.slicknav_menu {
+			display: none;   
+			}
+
+		#menu {
+			display: inline-block;	
+			}	
+		}
+
+	.menu_button {
+		display: inline-block;
+		border: 1px solid grey;
+		border-radius: 100%;
+		padding: 5px;
+		margin-left: 5px;
+		margin-right: 5px;
+		}
+
+	img.menu_button {
+		width: 40px;
+		height: 40px;
+		}
+
+/* Middle menu bar: visibility of system state (favourites, wait times, hours, clinicians) */
+	.sorting_icons {
+		@include span-columns(15);
+		border: 1px solid black;
+		padding-top: 4px;
+		overflow: auto;
+	}
+
+	/*li.icon1 {
+		@include span-columns(1);
+		@include shift(3);
+		border: 1px solid grey;
+		display: inline-block;
+		border: 1px solid pink;
+		overflow: auto;
+		}*/
+
+	.icon_list {
+		border: 1px solid grey;
+		margin-top: 0.5em;
+		padding-top: 0.5em;
+		overflow: auto;
+
+	}
+
+	.i1 {
+		
+		@include span-columns(1);
+		@include shift(1);
+	}
+
+	.i2 {
+		
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.i3 {
+	
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.i4 {
+	
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.i5 {
+	
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.pic {
+		width: 40px;
+		height: 40px;
+		margin: auto;
+	}
+
+	@include media($tablet) {
+		.pic {
+			width: 60px;
+			height: 60px;
+		
+		}
+	}
+
+/* Map styling and interface buttons */
+	#map-canvas {
+		height: 20em; /*375/16=23.43em*/
+		width: 100%;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		padding-top: 0.5em;
+		border-top: 1px solid grey;
+		}
+
+
+
+		@include media($height1) {
+			#map-canvas {
+				height: 28em;
+			}
+		}
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+
+/* Login screen --> index.html */
+	form {
+		/*padding between image and username entry 50/16 = 3.125em */
+		padding-top: 3.125em;	}
+
+		.username_entry {
+			border: 1px solid gray;
+			@include span-columns(6);
+			@include shift(3);
+			/*margin between username and password 8/16=0.5em*/
+			margin-bottom: 0.5em;
+			overflow: auto;   }
+
+		.password_entry {
+			border: 1px solid gray;
+			@include span-columns(6);
+			@include shift(3);
+			/*margin between password and submit button 12/16=0.75em*/
+			margin-bottom: 0.75em;
+			overflow: auto;   }
+
+		#user_credential_entry {
+			border-radius: 5px;
+			/*padding on top and bottom 5/16=0.3125*/
+			padding-top: 0.3125em;
+			padding-bottom: 0.3125em;
+			@include span-columns(4);
+			@include shift(4);
+		
+			@include media($tablet) {
+				@include span-columns(2);
+				@include shift(5);   }
+			}
+
+			.visibility_system_state {
+			
+				text-align: center;
+				font-size: 1.2em;
+				
+			}
+
+/* Find or checkin buttons --> find_or_check.html */
+	/*.find_a_clinic_button, .checkin_button {
+		border: 2px solid green;
+		border-radius: 4px;
+		padding: 4px;
+		margin: 5px;
+		color: black;
+	}
+*/
+	.find_a_clinic_button:visited, .checkin_button:visited {
+		color: black;
+	}
+
+/* check_in.html */
+	.return {
+		border: 2px solid black;
+		border-radius: 4px;
+		padding: 4px;
+		margin: 5px;
+		color: black;
+	}
+
+	.return:visited {
+		color: black;
+	}
+
+	img.check_in_icon {
+		width: 250px;
+		margin: auto;
+	}
+
+
+/* find_a_clinic_favourites.html */
+	.clinic_name {
+		border: 1px solid black;
+		border-radius: 4px;
+		padding: 8px;
+		margin: 2px;
+		color: black;
+		text-decoration: none;
+	}
+
+	.clinic_name:visited {
+		color: black;
+		text-decoration: none;
+	}
+
+/* find_a_clinic_wait_times.html */
+	.wait_time_list_item {	
+		border: 1px solid black;
+		border-radius: 4px;
+		padding: 8px;
+		margin: 2px;
+		color: black;
+	}
+
+/* find_a_clinic_date_and_time.html */
+	img.date_time_picker {
+		width: 100%;
+	}	
+
+/* find_a_clinic_clinician.html */
+	.clinician_search {
+		border: 2px solid pink;
+		padding: 4px;
+	}	
+
+	.clinician_name {
+		padding: 4px;
+		margin: 4px;
+		color: black;
+		border: 1px solid black;
+		border-radius: 4px;
+	}
+
+/* search.html */
+	.search_field {
+		border: 2px solid purple;
+		margin-left: 2px;
+	}	
