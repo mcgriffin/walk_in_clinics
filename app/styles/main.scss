@@ -96,15 +96,6 @@ $height2: new-breakpoint(min-height 800px);
 		overflow: auto;
 	}
 
-	/*li.icon1 {
-		@include span-columns(1);
-		@include shift(3);
-		border: 1px solid grey;
-		display: inline-block;
-		border: 1px solid pink;
-		overflow: auto;
-		}*/
-
 	.icon_list {
 		border: 1px solid grey;
 		margin-top: 0.5em;
@@ -191,7 +182,18 @@ $height2: new-breakpoint(min-height 800px);
 			@include shift(4);
 			/*margin between username and password 8/16=0.5em*/
 			margin-bottom: 0.5em;
-			overflow: auto;   }
+			overflow: auto;   
+
+			@include media($tablet) {
+				@include span-columns(5);
+				@include shift(5);
+			}
+
+			@include media($desktop) {
+				@include span-columns(3);
+				@include shift(6);
+			}
+		}
 
 		.password_entry {
 			border: 1px solid gray;
@@ -199,7 +201,18 @@ $height2: new-breakpoint(min-height 800px);
 			@include shift(4);
 			/*margin between password and submit button 12/16=0.75em*/
 			margin-bottom: 0.75em;
-			overflow: auto;   }
+			overflow: auto;   
+
+			@include media($tablet) {
+				@include span-columns(5);
+				@include shift(5);
+			}
+
+				@include media($desktop) {
+				@include span-columns(3);
+				@include shift(6);
+			}
+		}
 
 		#user_credential_entry {
 			border-radius: 5px;
@@ -214,6 +227,19 @@ $height2: new-breakpoint(min-height 800px);
 				@include shift(6);   }
 			}
 
+		#clinician_search {
+			border: 2px solid blue;
+			display: inline-block;
+			border-radius: 5px;
+			padding-top: 0.125em;
+			padding-bottom: 0.125em;
+		}
+
+		#clinician_search_field {
+			border: 2px solid green;
+			display: inline-block;
+		}
+
 			.visibility_system_state {
 			
 				text-align: center;
@@ -221,15 +247,6 @@ $height2: new-breakpoint(min-height 800px);
 				
 			}
 
-/* Find or checkin buttons --> find_or_check.html */
-	/*.find_a_clinic_button, .checkin_button {
-		border: 2px solid green;
-		border-radius: 4px;
-		padding: 4px;
-		margin: 5px;
-		color: black;
-	}
-*/
 	.find_a_clinic_button:visited, .checkin_button:visited {
 		color: black;
 	}
