@@ -14,11 +14,11 @@
     		duration: 750,
     		label: '',
     	});
-    	
-
     });
     
-
+   
+    $('#clinician_search_field').floatlabel();
+    
 
    
 }); 
