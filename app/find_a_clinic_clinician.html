@@ -7,7 +7,7 @@
 
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
-    
+    <link rel="stylesheet" type="text/css" href="../bower_components/slicknav/dist/slicknav.css">
     <!-- endbuild -->
 
     <link rel="stylesheet" href="styles/main.css">
@@ -19,56 +19,57 @@
     <!--Top menu bar-->
     <!--Home, Location, Check In, Stats, Search-->
     <header>
-        <div class="menu_bar">
-          <a href="find_a_clinic_home.html"><img class="menu_button" src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-128.png"></a>
-          <a href="find_a_clinic_home.html"><img class="menu_button" src="http://icons.iconarchive.com/icons/icons8/ios7/128/Maps-Near-Me-icon.png"></a>
-          <a href="check_in.html"><img class="menu_button" src="http://icons.iconarchive.com/icons/icons8/ios7/512/Very-Basic-Checkmark-icon.png"></a>
-          <a href="stats.html"><img class="menu_button" src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Line-Chart-icon.png"></a>
-          <a href="search.html"><img class="menu_button" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png"></a>
-        </div>
+       <!--navigation menu bar-->
+      <div class="menu_bar">
+        <!--Visibility of system state-->
+        <h2 class="visibility_system_state">Find A Clinic</h2>
+        <ul id="menu" >
+          <li><a href="find_a_clinic_home.html">Home</a></li>
+          <li><a href="check_in.html">Check In</a></li>
+          <li><a href="stats.html">Stats</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
     </header> 
 
-    <!--Visibility of system state-->
-    <div class="visibility_system_state">
-      
-      <h1 class="visibility_system_state">Find A Clinic</h1>
-
-    </div>
-
-    <!--Favourites, wait times, hours, clinicians-->
-    <div class="sorting_icons">
-      
-      <a href="find_a_clinic_favourites.html"><img class="sort_icon" src="http://static.iconsplace.com/icons/preview/black/rating-star-256.png"></a>
-      
-      <a href="find_a_clinic_wait_times.html"><img class="sort_icon" src="http://www.realsalesdynamics.dk/wp-content/uploads/2014/08/sandglass-xxl.png"></a>
-      
-      <a href="find_a_clinic_date_and_time.html"><img class="sort_icon" src="https://cdn0.iconfinder.com/data/icons/feather/96/clock-128.png"></a>
-      
-      <a href="find_a_clinic_clinician.html"><img class="sort_icon" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-people-512.png"></a>
-
-    </div>
-
-    <!--Field to search for clinician name -->
-      
+   <!--Field to search for clinician name -->
+      <form class="clinician_search" action="">
       <div class="clinician_search">
-        <label for "clinician_search_field">Doctor</label>
-        <input id="clinician_search_field" name="clinician_search_field" type="text">
+        <input id="clinician_search_field" name="clinician_search_field" type="text" placeholder="Doctor">
+        <input id="clinician_search" name="submit" type="submit">
       </div>
+    </form>
+      
 
       <div class="clinician_return_results">
       <ul class="clinician_return_items">
-      	<a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Smith</li></a>
-      	<a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Miller</li></a>
-      	<a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Baker</li></a>
-      	<a href="find_a_clinic_home.html"><li class="clinician_name">Dr. White</li></a>
-      	<a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Weaver</li></a>
-      	<a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Schwartz</li></a>
+        <a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Smith</li></a>
+        <a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Miller</li></a>
+        <a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Baker</li></a>
+        <a href="find_a_clinic_home.html"><li class="clinician_name">Dr. White</li></a>
+        <a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Weaver</li></a>
+        <a href="find_a_clinic_home.html"><li class="clinician_name">Dr. Schwartz</li></a>
       </div>
 
+  <nav class="icon_list">
+  <li class="i1"><a href="find_a_clinic_favourites.html"><img class="pic" src="../images/like80.png"></a></li>
+  <li class="i2"><a href="find_a_clinic_wait_times.html"><img class="pic" src="../images/sand26.png"></a></li>
+  <li class="i3"><a href="find_a_clinic_date_and_time.html"><img class="pic" src="../images/location68.png"></a></li>
+  <li class="i4"><a href="find_a_clinic_location.html"><img class="pic" src="../images/location67.png"></a></li>
+  <li class="i5"><a href="find_a_clinic_clinician.html"><img class="pic" src="../images/profile29.png"></a></li>
 
-    <footer class="copyright_info">
-    	<p>&copy; 2015 Melissa Griffin</p>
-    </footer>
+  </nav>
+
+     <!-- build:js scripts/main.js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/floatlabel.js/floatlabels.min.js"></script>
+    <script src="../bower_components/slicknav/dist/jquery.slicknav.js"></script>
+
+
+    <script src="scripts/main.js"></script>
+    
+    <!-- endbuild -->
+
 
     </body>
 
