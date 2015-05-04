@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>walk_in_clinics</title>
+    <title>Clinic Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
@@ -13,7 +12,6 @@
 
     <link rel="stylesheet" href="styles/main.css">
 
-    
   </head>
 
   <body>
@@ -21,26 +19,25 @@
     <!--Top logo bar-->
     <header>  
       <div class="logo_bar">
-        <img class="sign_in_page" src="http://placehold.it/1400x700">
+        <img class="sign_in_page" src="../images/health.jpg">
       </div>
+     
     </header>  
 
+    <div class="deco_bar"> </div>
+      <h1 id="center">Clinic Finder</h1>
+   
+    
     <!--Form to capture people's usernames and passwords to gain entry into the system-->
-    <form class="user_credential_entry" action="find_a_clinic_home.html">
+    <form class="user_credential_entry" action="../pages/find_a_clinic_home.html">
       
-      <!--Field for people to enter their username-->
-      <div class="username_entry">
-        <input type="text" class="float_username" placeholder="Username" />
-      </div>
+    <input class="float_username" class="floatlabel" name="float_username" type="text" placeholder="Username">
 
-      <!--Field for people to enter their password-->
-      <div class="password_entry">
-        <input type="password" class="float_password" placeholder="Password" />
-      </div>
-
+     <input class="float_password" class="floatlabel" name="float_password" type="password" placeholder="Password">
+    
       <!--Button for submitting the username and password-->
       <div class="submit_button">
-        <input id="user_credential_entry" name="submit" type="submit"/>
+        <input id="user_credential_entry" name="submit" type="submit" value="Login"/>
       </div>
 
     </form>

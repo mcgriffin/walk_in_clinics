@@ -6,7 +6,7 @@
 
 @import '../../bower_components/bourbon/dist/_bourbon.scss';
 
-$visual-grid: true;
+$visual-grid: false;
 $grid-columns: 15;
 
 
@@ -55,6 +55,8 @@ $height2: new-breakpoint(min-height 800px);
 		list-style: none;
 	}
 
+
+
 /*****************************************************************************
   Layout Styles
 ******************************************************************************/
@@ -88,20 +90,12 @@ $height2: new-breakpoint(min-height 800px);
 		height: 40px;
 		}
 
-/* Middle menu bar: visibility of system state (favourites, wait times, hours, clinicians) */
-	.sorting_icons {
-		@include span-columns(15);
-		border: 1px solid black;
-		padding-top: 4px;
-		overflow: auto;
-	}
-
-	.icon_list {
+	nav.icon_list {
+		
 		border: 1px solid grey;
 		margin-top: 0.5em;
 		padding-top: 0.5em;
 		overflow: auto;
-
 	}
 
 	.i1 {
@@ -141,6 +135,11 @@ $height2: new-breakpoint(min-height 800px);
 		margin: auto;
 	}
 
+	.special_icon_list {
+		padding-top: 1em;
+	}
+
+
 	@include media($tablet) {
 		.pic {
 			width: 60px;
@@ -159,7 +158,14 @@ $height2: new-breakpoint(min-height 800px);
 		border-top: 1px solid grey;
 		}
 
-
+		#map-canvas_fav {
+		height: 20em; /*375/16=23.43em*/
+		width: 100%;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		padding-top: 0.5em;
+		border-top: 1px solid grey;
+		}
 
 		@include media($height1) {
 			#map-canvas {
@@ -167,17 +173,56 @@ $height2: new-breakpoint(min-height 800px);
 			}
 		}
 
+	#canvas-holder {
+		display: block;
+		padding-top: 1em;
+		@include span-columns(13);
+		@include shift(1);
+		overflow: auto;
+		}	
+
+		@include media($tablet) {
+			#canvas-holder {
+				width: 50%;
+				margin-left: 25%;
+			}
+		}
+
+
+
 /*****************************************************************************
   Module Styles
 ******************************************************************************/
 
 /* Login screen --> index.html */
-	form {
-		/*padding between image and username entry 50/16 = 3.125em */
-		padding-top: 3.125em;	}
+	form.user_credential_entry {
+		/*padding between image and username entry 200/16 = 12.5em */
+		padding-top: 9.5em;	
+	}
 
-		.username_entry {
+	form.search {
+		padding-top: 0.7125em;
+		overflow: auto;
+	}
+
+	form.clinician_search {
+		padding-top: 0.3em;
+		padding-bottom: 0.3em;
+
+		overflow: auto;
+	}
+
+		.clinician_return_results {
+			margin-bottom: 2em;
+		}
+		.banner_logo {
+			@include span-columns(5);
+			@include shift(5);
+		}
+
+		.float_username {
 			border: 1px solid gray;
+			border-radius: 2px;
 			@include span-columns(7);
 			@include shift(4);
 			/*margin between username and password 8/16=0.5em*/
@@ -195,8 +240,9 @@ $height2: new-breakpoint(min-height 800px);
 			}
 		}
 
-		.password_entry {
+		.float_password {
 			border: 1px solid gray;
+			border-radius: 2px;
 			@include span-columns(7);
 			@include shift(4);
 			/*margin between password and submit button 12/16=0.75em*/
@@ -227,24 +273,47 @@ $height2: new-breakpoint(min-height 800px);
 				@include shift(6);   }
 			}
 
+			
+
+	#clinician_search_field {
+		@include span-columns(7);
+		@include shift(1);
+			
+		}
 		#clinician_search {
-			border: 2px solid blue;
-			display: inline-block;
+		
+		@include span-columns(5);
+		@include shift(1);
 			border-radius: 5px;
 			padding-top: 0.125em;
 			padding-bottom: 0.125em;
 		}
 
-		#clinician_search_field {
-			border: 2px solid green;
-			display: inline-block;
+		@include media($tablet) {
+			#clinician_search{
+			@include span-columns(3);
+			@include shift(1);
+			}
 		}
-
 			.visibility_system_state {
-			
+				background-color: #c1d3d9;
+				padding-top: 40px;
+				padding-bottom: 20px;
 				text-align: center;
 				font-size: 1.2em;
+				position: relative;
+				margin-top: 0px;
 				
+			}
+
+			.deco_bar {
+				@include span-columns(15);
+				text-align: center;
+				overflow: auto;
+				height: 10px;
+				position: relative;
+				margin-top: -13px;
+				background-color: #8AA8BD;
 			}
 
 	.find_a_clinic_button:visited, .checkin_button:visited {
@@ -272,49 +341,103 @@ $height2: new-breakpoint(min-height 800px);
 
 /* find_a_clinic_favourites.html */
 	.clinic_name {
-		border: 1px solid black;
-		border-radius: 4px;
-		padding: 8px;
+		padding: 0.6em;
 		margin: 2px;
 		color: black;
 		text-decoration: none;
+		font-size: 1.2em;
 	}
 
 	.clinic_name:visited {
-		color: black;
+		color: grey;
 		text-decoration: none;
 	}
 
 /* find_a_clinic_wait_times.html */
+	
+	@include media($tablet) {
+		.clinic_wait_times {
+			padding: 0em;
+		}
+	}
+	
 	.wait_time_list_item {	
-		border: 1px solid black;
-		border-radius: 4px;
-		padding: 8px;
+		font-size: 1.2em;
+		padding: 0.5em;
 		margin: 2px;
 		color: black;
 	}
 
 /* find_a_clinic_date_and_time.html */
 	img.date_time_picker {
-		width: 100%;
+		width: 90%;
+		margin-left: 5%;
 	}	
+
+	@include media($tablet) {
+		img.date_time_picker {
+			width: 50%;
+			margin-left: 25%;
+		}
+
+		.clinic {
+			margin-left: 5%;
+			font-size: 1.2em;
+		}
+	}
 
 /* find_a_clinic_clinician.html */
-	.clinician_search {
-		border: 2px solid pink;
-		padding: 4px;
-	}	
 
 	.clinician_name {
-		padding: 4px;
+		padding: 0.18em;
+		padding-left: 1.5em;
+
 		margin: 4px;
 		color: black;
-		border: 1px solid black;
+		text-decoration: none;
+		font-size: 1.2em;
 		border-radius: 4px;
 	}
 
+	.clinician_name:visited {
+		color: grey;
+	}
+
 /* search.html */
-	.search_field {
-		border: 2px solid purple;
-		margin-left: 2px;
+	#search_field1 {
+		@include span-columns(7);
+		@include shift(1);	
+
 	}	
+
+	#search_field2 {
+		@include span-columns(5);
+		@include shift(1);
+		border-radius: 5px;
+		
+	}
+
+	.search_banner {
+		padding-top: 2em;
+	}
+
+	@include media($tablet) {
+		.search_banner {
+			padding-top: 0px;
+		}
+	}
+
+	.spacer {
+		height: 140px;
+		width: 100%;
+	
+		overflow: auto;
+	}
+
+	#center {
+	@include span-columns(11);
+	@include shift(2);
+	color: black;
+	overflow: auto;
+	text-align: center;
+}

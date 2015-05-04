@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>find_or_checkin</title>
+    <meta name="viewport" content="width=device-width", "scale=1">
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+    
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/slicknav/dist/slicknav.css">
+  </head>
+
+<body>
+
+<!--Top menu bar-->
+    <!--Home, Location, Check In, Stats, Search-->
+    <header>
+      <!--navigation menu bar-->
+      <div class="menu_bar">
+        <!--Visibility of system state-->
+        <h2 class="visibility_system_state">Find A Clinic</h2>
+         <div class="deco_bar"></div>
+          <ul id="menu" >
+            <li><a href="find_a_clinic_home.html">Home</a></li>
+            <li><a href="check_in.html">Check In</a></li>
+            <li><a href="stats.html">Stats</a></li>
+            <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+    </header> 
+
+   <div>
+    <img class="search_banner" src="../images/health.jpg">
+    </div>
+
+ <!--Search field -->
+     <div> 
+      <form class="search" action="map_results1.html">
+        
+        <!--<label for "search_field">Search</label>-->
+        <input id="search_field1" name="search_field" type="text">
+        
+        <!--Button for searching -->
+        
+          <input id="search_field2" name="submit" type="submit" value="Search">
+       
+      </form>
+    </div>
+
+<!--Favourites, wait times, hours, clinicians-->
+  <div class="special_icon_list">
+     <nav class="icon_list">
+      <ul>
+          <li class="i1"><a href="find_a_clinic_favourites.html"><img class="pic" src="../images/like80.png"></a></li>
+          <li class="i2"><a href="find_a_clinic_wait_times.html"><img class="pic" src="../images/sand26.png"></a></li>
+          <li class="i3"><a href="find_a_clinic_date_and_time.html"><img class="pic" src="../images/location68.png"></a></li>
+          <li class="i4"><a href="find_a_clinic_location.html"><img class="pic" src="../images/location67.png"></a></li>
+          <li class="i5"><a href="find_a_clinic_clinician.html"><img class="pic" src="../images/profile29.png"></a></li>
+        </ul>  
+      </nav>
+    </div>
+
+ <!-- build:js scripts/main.js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/floatlabel.js/floatlabels.min.js"></script>
+    <script src="../bower_components/slicknav/dist/jquery.slicknav.js"></script>
+
+
+    <script src="../scripts/main.js"></script>
+    
+    <!-- endbuild -->
+
+
+    </body>
+
+    </html>

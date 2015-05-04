@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>walk_in_clinics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="../bower_components/gmaps/gmaps.js"></script>
+ 
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/slicknav/dist/slicknav.css"
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="../styles/main.css">
+
+    
+  </head>
+
+<body>
+
+<!--Top menu bar-->
+    <!--Home, Location, Check In, Stats, Search-->
+    <header>
+      <!--navigation menu bar-->
+      <div class="menu_bar">
+        <!--Visibility of system state-->
+        <h2 class="visibility_system_state">Stats</h2>
+         <div class="deco_bar"></div>
+          <ul id="menu" >
+            <li><a href="find_a_clinic_home.html">Home</a></li>
+            <li><a href="check_in.html">Check In</a></li>
+            <li><a href="stats.html">Stats</a></li>
+            <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+    </header> 
+
+<div id="canvas-holder">
+  <canvas id="chart-area" width="400" height="400"/>
+</canvas>
+</div>
+  <script>
+
+    var doughnutData = [
+        {
+          value: 300,
+          color:"#011f4b",
+          highlight: "#222d5e",
+          label: "wait times"
+        },
+        {
+          value: 50,
+          color: "#03396c",
+          highlight: "#24487e",
+          label: "convenience"
+        },
+        {
+          value: 100,
+          color: "#005b96",
+          highlight: "#216c77",
+          label: "rating"
+        },
+        {
+          value: 40,
+          color: "#6497b1",
+          highlight: "#A8B3C5",
+          label: "times visited"
+        },
+        {
+          value: 120,
+          color: "#b3cde0",
+          highlight: "#616774",
+          label: "clinician"
+        }
+
+      ];
+
+      window.onload = function(){
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+      };
+
+  </script>
+<div class="spacer">
+<!--Favourites, wait times, hours, clinicians-->
+  <nav class="icon_list">
+    <ul>
+      <li class="i1"><a href="find_a_clinic_favourites.html"><img class="pic" src="../images/like80.png"></a></li>
+      <li class="i2"><a href="find_a_clinic_wait_times.html"><img class="pic" src="../images/sand26.png"></a></li>
+      <li class="i3"><a href="find_a_clinic_date_and_time.html"><img class="pic" src="../images/location68.png"></a></li>
+      <li class="i4"><a href="find_a_clinic_location.html"><img class="pic" src="../images/location67.png"></a></li>
+      <li class="i5"><a href="find_a_clinic_clinician.html"><img class="pic" src="../images/profile29.png"></a></li>
+    </ul>  
+  </nav>
+</div>
+
+ <!-- build:js scripts/main.js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/floatlabel.js/floatlabels.min.js"></script>
+    <script src="../bower_components/slicknav/dist/jquery.slicknav.js"></script>
+    <script src="../bower_components/Chart.js/Chart.js"></script>
+
+
+    <script src="../scripts/main.js"></script>
+    
+    <!-- endbuild -->
+
+
+    </body>
+
+    </html>
